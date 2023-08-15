@@ -28,7 +28,7 @@ class Contact {
   Map<String, dynamic> toJson() => {
         "id": id,
         "phones": List<Phone>.from(phones.map((x) => x)),
-        "errors": List<Email>.from(emails.map((x) => x)),
+        "emails": List<Email>.from(emails.map((x) => x)),
         "StructuredName": structuredName,
         "organization": organization,
       };
