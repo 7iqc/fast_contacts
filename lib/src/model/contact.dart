@@ -25,6 +25,14 @@ class Contact {
     );
   }
 
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "phones": List<Phone>.from(phones.map((x) => x)),
+        "errors": List<Email>.from(emails.map((x) => x)),
+        "StructuredName": structuredName,
+        "organization": organization,
+      };
+
   final String id;
   final List<Phone> phones;
   final List<Email> emails;
@@ -46,6 +54,10 @@ class Phone {
       label: map['label'] ?? '',
     );
   }
+  Map<String, dynamic> toJson() => {
+        "number": number,
+        "label": label,
+      };
 
   final String number;
   final String label;
@@ -63,6 +75,11 @@ class Email {
       label: map['label'] ?? '',
     );
   }
+
+  Map<String, dynamic> toJson() => {
+        "address": address,
+        "label": label,
+      };
 
   final String address;
   final String label;
@@ -89,6 +106,15 @@ class StructuredName {
     );
   }
 
+  Map<String, dynamic> toJson() => {
+        "displayName": displayName,
+        "namePrefix": namePrefix,
+        "givenName": givenName,
+        "middleName": middleName,
+        "familyName": familyName,
+        "nameSuffix": nameSuffix,
+      };
+
   final String displayName;
   final String namePrefix;
   final String givenName;
@@ -111,6 +137,12 @@ class Organization {
       jobDescription: map['jobDescription'] ?? '',
     );
   }
+
+  Map<String, dynamic> toJson() => {
+        "company": company,
+        "department": department,
+        "jobDescription": jobDescription,
+      };
 
   final String company;
   final String department;
