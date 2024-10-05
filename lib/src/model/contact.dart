@@ -77,14 +77,6 @@ class Contact {
         "StructuredName": structuredName,
         "organization": organization,
       };
-
-  final String id;
-  final List<Phone> phones;
-  final List<Email> emails;
-  final StructuredName? structuredName;
-  final Organization? organization;
-
-  String get displayName => structuredName?.displayName ?? '';
 }
 
 class Phone {
@@ -130,8 +122,6 @@ class Phone {
         "label": label,
       };
 
-  final String number;
-  final String label;
 }
 
 @immutable
@@ -179,8 +169,6 @@ class Email {
         "label": label,
       };
 
-  final String address;
-  final String label;
 }
 
 @immutable
@@ -258,12 +246,6 @@ class StructuredName {
         "nameSuffix": nameSuffix,
       };
 
-  final String displayName;
-  final String namePrefix;
-  final String givenName;
-  final String middleName;
-  final String familyName;
-  final String nameSuffix;
 }
 
 class Organization {
@@ -317,7 +299,4 @@ class Organization {
         "jobDescription": jobDescription,
       };
 
-  final String company;
-  final String department;
-  final String jobDescription;
 }
